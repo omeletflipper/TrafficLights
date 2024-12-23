@@ -15,13 +15,13 @@ YELLOW_PIN_2 = 26
 GREEN_PIN_2 = 6
 
 # GPIO pins for the third traffic light module
-RED_PIN_3 = 5
-YELLOW_PIN_3 = 6
-GREEN_PIN_3 = 13
+RED_PIN_3 = 27
+YELLOW_PIN_3 = 17
+GREEN_PIN_3 = 4
 
 # GPIO pins for the fourth traffic light module
-RED_PIN_4 = 12
-YELLOW_PIN_4 = 16
+RED_PIN_4 = 19
+YELLOW_PIN_4 = 21
 GREEN_PIN_4 = 20
 
 # Setup GPIO pins as output
@@ -119,7 +119,7 @@ try:
             red_on(2)
             green_on(3)
             red_on(4)
-            time.slep(5)
+            time.sleep(5)
             yellow_on(3)
             time.sleep(1)
  
