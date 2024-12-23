@@ -87,40 +87,50 @@ def green_on(module):
         GPIO.output(RED_PIN_4, GPIO.LOW)
         GPIO.output(YELLOW_PIN_4, GPIO.LOW)
         GPIO.output(GREEN_PIN_4, GPIO.HIGH)
-    
-red_on(1)
-red_on(2)
-red_on(3)
-red_on(4)
+
 
 # Main loop for cycling through the lights
 try:
     while True:
         for module in [1, 2, 3, 4]:
             
-            green_on(1) #light 1
+            
+            #light 1
+            green_on(1)
+            red_on(2)
+            red_on(3)
+            red_on(4)
             time.sleep(5)
             yellow_on(1)
             time.sleep(1)
             red_on(1)
             
-            green_on(2) #light 2
+            #light 2
+            red_on(1)
+            green_on(2)
+            red_on(3)
+            red_on(4)
             time.sleep(5)
             yellow_on(2)
             time.sleep(1)
-            red_on(2)
             
-            green_on(3) #light 3
-            time.sleep(5)
+            #light 3
+            red_on(1)
+            red_on(2)
+            green_on(3)
+            red_on(4)
+            time.slep(5)
             yellow_on(3)
             time.sleep(1)
+ 
+            #light 4
+            red_on(1)
+            red_on(2)
             red_on(3)
-            
-            green_on(4) #light 4
+            green_on(4)
             time.sleep(5)
             yellow_on(4)
             time.sleep(1)
-            red_on(4)
             
 except KeyboardInterrupt:
     GPIO.cleanup()
