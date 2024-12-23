@@ -103,15 +103,14 @@ try:
             time.sleep(5)
             yellow_on(1)
             time.sleep(1)
-            red_on(1)
             
             #light 2
-            red_on(1)
             green_on(2)
+            red_on(1)
             red_on(3)
             red_on(4)
             time.sleep(5)
-            yellow_on(2)
+            yellow_on(1)
             time.sleep(1)
             
             #light 3
