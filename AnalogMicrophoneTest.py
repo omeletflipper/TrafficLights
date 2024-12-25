@@ -10,7 +10,7 @@ def detect_sound():
     
     if sound_detected == 1:
         print("Sound detected")
-    else
+    else:
         print("no sound detected")
     
 try:
