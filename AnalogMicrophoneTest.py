@@ -15,8 +15,8 @@ def detect_sound():
     
 try:
     while True:
+        time.sleep(1)
         detect_sound()
-    time.sleep(1)
 
 except KeyboardInterrupt:
     GPIO.cleanup()
