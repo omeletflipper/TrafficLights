@@ -11,7 +11,7 @@ try:
         if GPIO.input(MIC_PIN) == GPIO.HIGH:  # Sound detected
             print("Sound detected")
         else:
-            print("No sound)
+            print("No sound")
 
 
 except KeyboardInterrupt:
