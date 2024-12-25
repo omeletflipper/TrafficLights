@@ -110,7 +110,7 @@ try:
             red_on(3)
             red_on(4)
             time.sleep(5)
-            yellow_on(1)
+            yellow_on(2)
             time.sleep(1)
             
             #light 3
