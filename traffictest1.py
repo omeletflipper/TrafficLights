@@ -12,7 +12,7 @@ GREEN_PIN_1 = 24
 # GPIO pins for the second traffic light module
 RED_PIN_2 = 16
 YELLOW_PIN_2 = 26
-GREEN_PIN_2 = 6
+GREEN_PIN_2 = 22
 
 # GPIO pins for the third traffic light module
 RED_PIN_3 = 27
