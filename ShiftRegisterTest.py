@@ -18,15 +18,20 @@ def shift_out(data):
         GPIO.output(DATA, GPIO.HIGH if (data & (1 << (7 - bit))) else GPIO.LOW)
         GPIO.output(CLOCK, GPIO.HIGH)
     GPIO.output(LATCH, GPIO.HIGH)
+    time.sleep(0.05)  # Allow stabilization
 
 try:
     while True:
-        # Control Traffic Light LEDs
-        shift_out(0b00000001)  # Turn on Red
+        print("Red ON")
+        shift_out(0b10000000)  # Red LED
         time.sleep(1)
-        shift_out(0b00000010)  # Turn on Yellow
+
+        print("Yellow ON")
+        shift_out(0b01000000)  # Yellow LED
         time.sleep(1)
-        shift_out(0b00000100)  # Turn on Green
+
+        print("Green ON")
+        shift_out(0b00100000)  # Green LED
         time.sleep(1)
 except KeyboardInterrupt:
     GPIO.cleanup()
