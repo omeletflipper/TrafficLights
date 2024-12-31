@@ -22,11 +22,11 @@ def shift_out(data):
 try:
     while True:
         # Control Traffic Light LEDs
-        shift_out(0b10000000)  # Turn on Red
+        shift_out(0b00000001)  # Turn on Red
         time.sleep(1)
-        shift_out(0b01000000)  # Turn on Yellow
+        shift_out(0b00000010)  # Turn on Yellow
         time.sleep(1)
-        shift_out(0b00100000)  # Turn on Green
+        shift_out(0b00000100)  # Turn on Green
         time.sleep(1)
 except KeyboardInterrupt:
     GPIO.cleanup()
