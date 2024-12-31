@@ -27,11 +27,12 @@ def latch_data():
 # Turn on all 16 LEDs (binary 1111111111111111)
 try:
     while True:
-        shift_out(0b11)  # 0xFFFF = 1111111111111111 in binary (turn on all 16 LEDs)
+        shift_out(0b001100100100)  
         latch_data()  # Update the LEDs
-        time.sleep(1)  # Keep LEDs on for 1 second
+        time.sleep(1)  
         shift_out(0b00)
         latch_data()
         time.sleep(1)
+
 except KeyboardInterrupt:
-    GPIO.cleanup()  # Clean up GPIO on exit
+    GPIO.cleanup()  
