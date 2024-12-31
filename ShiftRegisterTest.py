@@ -23,15 +23,15 @@ def shift_out(data):
 try:
     while True:
         print("Red ON")
-        shift_out(0b10000000)  # Red LED
+        shift_out(0b00000001)  # Red LED
         time.sleep(1)
 
         print("Yellow ON")
-        shift_out(0b01000000)  # Yellow LED
+        shift_out(0b00000010)  # Yellow LED
         time.sleep(1)
 
         print("Green ON")
-        shift_out(0b00100000)  # Green LED
+        shift_out(0b00000100)  # Green LED
         time.sleep(1)
 except KeyboardInterrupt:
     GPIO.cleanup()
