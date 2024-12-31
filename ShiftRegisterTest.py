@@ -32,5 +32,6 @@ try:
         time.sleep(1)  # Keep LEDs on for 1 second
         shift_out(0b0000000000000000)
         latch_data()
+        time.sleep(1)
 except KeyboardInterrupt:
     GPIO.cleanup()  # Clean up GPIO on exit
