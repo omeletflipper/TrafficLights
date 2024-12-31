@@ -27,7 +27,7 @@ def latch_data():
 # Turn on all 16 LEDs (binary 1111111111111111)
 try:
     while True:
-        shift_out(0b110000000000)  
+        shift_out(0b100001001001)  
         latch_data()
         time.sleep(1)
 
