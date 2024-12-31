@@ -28,7 +28,7 @@ def latch_data():
 # Turn on all 8 LEDs (binary 11111111)
 try:
     while True:
-        shift_out(0xFF)  # 0xFF = 11111111 in binary (turn on all LEDs)
+        shift_out(0b11111111)  # 0xFF = 11111111 in binary (turn on all LEDs)
         latch_data()
         time.sleep(0.5)  # Keep LEDs on for 0.5 seconds
 except KeyboardInterrupt:
