@@ -2,9 +2,9 @@ import RPi.GPIO as GPIO
 import time
 
 # Pin configuration
-DATA = 17
-CLOCK = 27
-LATCH = 22
+DATA = 16
+CLOCK = 21
+LATCH = 20
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(DATA, GPIO.OUT)
@@ -22,16 +22,10 @@ def shift_out(data):
 
 try:
     while True:
-        print("Red ON")
-        shift_out(0b00000001)  # Red LED
-        time.sleep(1)
-
-        print("Yellow ON")
-        shift_out(0b00000010)  # Yellow LED
-        time.sleep(1)
-
-        print("Green ON")
-        shift_out(0b00000100)  # Green LED
-        time.sleep(1)
+        shift_out(0b11111111)
+        time.sleep(2)
+        shift_out(0b00000000)
+        time.sleep(2)
+        
 except KeyboardInterrupt:
     GPIO.cleanup()
