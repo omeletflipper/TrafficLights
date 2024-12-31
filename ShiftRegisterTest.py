@@ -1,31 +1,35 @@
 import RPi.GPIO as GPIO
 import time
 
-# Pin configuration
-DATA = 16
-CLOCK = 21
-LATCH = 20
+# Define GPIO pins for shift register
+data_pin = 16  # DS pin
+clock_pin = 21  # SHCP pin
+latch_pin = 20  # STCP pin
 
+# Set up GPIO pins
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(DATA, GPIO.OUT)
-GPIO.setup(CLOCK, GPIO.OUT)
-GPIO.setup(LATCH, GPIO.OUT)
+GPIO.setup(data_pin, GPIO.OUT)
+GPIO.setup(clock_pin, GPIO.OUT)
+GPIO.setup(latch_pin, GPIO.OUT)
 
+# Function to send data to the shift register
 def shift_out(data):
-    GPIO.output(LATCH, GPIO.LOW)
-    for bit in range(8):  # 8 bits for one shift register
-        GPIO.output(CLOCK, GPIO.LOW)
-        GPIO.output(DATA, GPIO.HIGH if (data & (1 << (7 - bit))) else GPIO.LOW)
-        GPIO.output(CLOCK, GPIO.HIGH)
-    GPIO.output(LATCH, GPIO.HIGH)
-    time.sleep(0.05)  # Allow stabilization
+    for bit in range(8):  # 8 bits for 8 LEDs
+        # Send one bit at a time
+        GPIO.output(data_pin, (data >> (7 - bit)) & 1)
+        GPIO.output(clock_pin, GPIO.HIGH)
+        GPIO.output(clock_pin, GPIO.LOW)
 
+# Function to latch the data (activate LEDs)
+def latch_data():
+    GPIO.output(latch_pin, GPIO.HIGH)
+    GPIO.output(latch_pin, GPIO.LOW)
+
+# Turn on all 8 LEDs (binary 11111111)
 try:
     while True:
-        shift_out(0b11111111)
-        time.sleep(2)
-        shift_out(0b00000000)
-        time.sleep(2)
-        
+        shift_out(0xFF)  # 0xFF = 11111111 in binary (turn on all LEDs)
+        latch_data()
+        time.sleep(0.5)  # Keep LEDs on for 0.5 seconds
 except KeyboardInterrupt:
-    GPIO.cleanup()
+    GPIO.cleanup()  # Clean up GPIO on exit
