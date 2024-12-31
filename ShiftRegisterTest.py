@@ -14,8 +14,8 @@ GPIO.setup(latch_pin, GPIO.OUT)
 
 # Function to send data to the shift register
 def shift_out(data):
-    for bit in range(8):
-        GPIO.output(data_pin, (data >> (7 - bit)) & 1)
+    for bit in range(16):
+        GPIO.output(data_pin, (data >> (15 - bit)) & 1)
         GPIO.output(clock_pin, GPIO.HIGH)
         GPIO.output(clock_pin, GPIO.LOW)
 
@@ -26,10 +26,10 @@ def latch_data():
 
 try:
     while True:
-        shift_out(0b11111111)  # 0xFF = 11111111 in binary (turn on all LEDs)
+        shift_out(0b1111111111111111)
         latch_data()
         time.sleep(1)  
-        shift_out(0b00000000)
+        shift_out(0b0000000000000000)
         latch_data()
         time.sleep(1)
 
