@@ -21,7 +21,6 @@ def shift_out(data):
 
 # Function to latch the data (activate LEDs)
 def latch_data():
-    time.sleep(0.01)
     GPIO.output(latch_pin, GPIO.HIGH)  # Latch the data
     GPIO.output(latch_pin, GPIO.LOW)
 
