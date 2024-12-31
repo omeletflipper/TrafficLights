@@ -30,7 +30,7 @@ try:
         shift_out(0b1011011011010000)  
         latch_data()  # Update the LEDs
         time.sleep(1)  
-        shift_out(0b00)
+        shift_out(0b0000000000000000)
         latch_data()
         time.sleep(1)
 
