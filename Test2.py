@@ -20,7 +20,7 @@ def setOutput(ledpattern):
 
 try:
     while True:
-        setOutput("1000000")
+        setOutput("10000000")
         time.sleep(0.5)
         setOutput("01000000")
         time.sleep(0.5)
