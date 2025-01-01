@@ -16,7 +16,7 @@ def setOutput(ledpattern):
         GPIO.output(DATA_PIN, int (ledpattern[x - 1]))
         GPIO.output(CLOCK_PIN, 1)
         GPIO.output(CLOCK_PIN, 0)
-    GPIO.out(LATCH_PIN, 1)
+    GPIO.output(LATCH_PIN, 1)
 
 try:
     while True:
