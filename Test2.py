@@ -28,3 +28,6 @@ try:
             setOutput("00100100")
         time.sleep(0.5)
         setOutput("11111111")
+
+except KeyboardInterrupt:
+    GPIO.cleanup()  
