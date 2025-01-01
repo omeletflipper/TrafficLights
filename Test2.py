@@ -13,7 +13,7 @@ GPIO.setup(LATCH_PIN, GPIO.OUT)
 def setOutput(ledpattern):
     GPIO.output(LATCH_PIN, 0)
     for x in range(8):
-        GPIO.output(DATA_PIN, int (ledpattern[x - 1]))
+        GPIO.output(DATA_PIN, int (ledpattern[x]))
         GPIO.output(CLOCK_PIN, 1)
         GPIO.output(CLOCK_PIN, 0)
     GPIO.output(LATCH_PIN, 1)
