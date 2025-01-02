@@ -39,7 +39,7 @@ try:
         time.sleep(0.5)
         setOutput("0000000000000001")
         time.sleep(0.5)
-        setOutput("11111111") #all on
+        setOutput("1111111111111111") #all on
         time.sleep(0.5)
 
 except KeyboardInterrupt:
