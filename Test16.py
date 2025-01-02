@@ -23,6 +23,12 @@ def setOutput(ledpattern):
 
 try:
     while True:
+        setOutput("0000000000010000")
+        time.sleep(0.5)
+        setOutput("0000000000100000")
+        time.sleep(0.5)
+        setOutput("0000000001000000")
+        time.sleep(0.5)
         setOutput("0000000010000000")
         time.sleep(0.5)
         setOutput("0000000001000000")
