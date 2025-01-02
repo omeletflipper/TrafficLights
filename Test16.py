@@ -11,15 +11,15 @@ GPIO.setup(CLOCK_PIN, GPIO.OUT)
 GPIO.setup(LATCH_PIN, GPIO.OUT)
 
 def setOutput(ledpattern):
-    """
-    Send a 16-bit pattern to the shift registers.
-    """
     GPIO.output(LATCH_PIN, 0)
-    for x in range(16):  # Adjusted for 16 bits
-        GPIO.output(DATA_PIN, int(ledpattern[x]))  # Send bit by bit
-        GPIO.output(CLOCK_PIN, 1)  # Pulse clock
+    for x in range(16):
+        GPIO.output(DATA_PIN, int(ledpattern[x]))
+        GPIO.output(CLOCK_PIN, 1)
         GPIO.output(CLOCK_PIN, 0)
-    GPIO.output(LATCH_PIN, 1)  
+    
+    GPIO.output(LATCH_PIN, 1)
+    time.sleep(0.01)
+    GPIO.output(LATCH_PIN, 0)
 
 try:
     while True:
@@ -47,9 +47,8 @@ try:
         time.sleep(0.5)
         setOutput("0000000000000001")
         time.sleep(0.5)
-        setOutput("1111111111111111") #all on
+        setOutput("1111111111111111")
         time.sleep(0.5)
-        
 
 except KeyboardInterrupt:
     GPIO.cleanup()
