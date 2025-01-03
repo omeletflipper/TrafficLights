@@ -36,9 +36,16 @@ try:
         setOutput("0000001001001001")
         
         setOutput("0000001100001001")
-        time.sleep(0.3)
+        time.sleep(3)
+        setOutput("0000001010001001")
+        time.sleep(1)
+        setOutput("0000001001001001")
+        
         setOutput("0000100001001001")
-        time.sleep(0.3)
+        time.sleep(3)
+        setOutput("0000010001001001")
+        time.sleep(1)
+        setOutput("0000001001001001")
         
         
 except KeyboardInterrupt:
