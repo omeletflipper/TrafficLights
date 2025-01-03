@@ -49,5 +49,8 @@ try:
         time.sleep(0.3)
         setOutput("1111111111111111")
         time.sleep(0.3)
+        setOutput("0000000000000000")
+        time.sleep(0.3)
+
 except KeyboardInterrupt:
     GPIO.cleanup()
