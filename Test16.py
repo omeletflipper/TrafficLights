@@ -28,10 +28,13 @@ try:
         setOutput("0000001001001010")
         time.sleep(1)
         setOutput("0000001001001001")
-        time.sleep(3)
     
         setOutput("0000001001100001")
-        time.sleep(0.3)
+        time.sleep(3)
+        setOutput("0000001001010001")
+        time.sleep(1)
+        setOutput("0000001001001001")
+        
         setOutput("0000001100001001")
         time.sleep(0.3)
         setOutput("0000100001001001")
