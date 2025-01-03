@@ -24,13 +24,19 @@ def setOutput(ledpattern):
 try:
     while True:
         setOutput("0000001001001100")
-        time.sleep(0.3)
+        time.sleep(3)
+        setOutput("0000001001001010")
+        time.sleep(1)
+        setOutput("0000001001001001")
+        time.sleep(3)
+    
         setOutput("0000001001100001")
         time.sleep(0.3)
         setOutput("0000001100001001")
         time.sleep(0.3)
         setOutput("0000100001001001")
         time.sleep(0.3)
+        
         
 except KeyboardInterrupt:
     GPIO.cleanup()
