@@ -23,5 +23,3 @@ try:
         print(f"Mic 4 Voltage: {mic_4.voltage:.2f} V")
         print("-" * 30)
         time.sleep(1)
-
-except KeyboardInterrupt:
