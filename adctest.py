@@ -4,24 +4,33 @@ import busio
 from adafruit_ads1x15.ads1115 import ADS1115
 from adafruit_ads1x15.analog_in import AnalogIn
 
+# Initialize I2C bus and ADS1115
 i2c = busio.I2C(board.SCL, board.SDA)
 ads = ADS1115(i2c)
 
-# Set up single-ended channels for each KY 037 (A0, A1, A2, A3)
-mic_1 = AnalogIn(ads, ADS1115.P0)  # KY-037 A0 to ADS1115 A0
-mic_2 = AnalogIn(ads, ADS1115.P1)  # KY-037 A0 to ADS1115 A1
-mic_3 = AnalogIn(ads, ADS1115.P2)  # KY-037 A0 to ADS1115 A2
-mic_4 = AnalogIn(ads, ADS1115.P3)  # KY-037 A0 to ADS1115 A3
+# Set the gain (voltage range, default is 2/3 for ±6.144V range)
+ads.gain = 1  # ±4.096V range
 
-# Loop
 try:
     while True:
-        print(f"Mic 1 Voltage: {mic_1.voltage:.2f} V")
-        print(f"Mic 2 Voltage: {mic_2.voltage:.2f} V")
-        print(f"Mic 3 Voltage: {mic_3.voltage:.2f} V")
-        print(f"Mic 4 Voltage: {mic_4.voltage:.2f} V")
+        mic1 = AnalogIn(ads, ADS1115.P0)
+        mic2 = AnalogIn(ads, ADS1115.P1)
+        mic3 = AnalogIn(ads, ADS1115.P2)
+        mic4 = AnalogIn(ads, ADS1115.P3)
+
+        # Read and print the voltage for each channel
+        print(f"Channel 0: {mic1.voltage:.2f} V")
+        print(f"Channel 1: {mic2.voltage:.2f} V")
+        print(f"Channel 2: {mic3.voltage:.2f} V")
+        print(f"Channel 3: {mic4.voltage:.2f} V")
         print("-" * 30)
-        time.sleep(0.5)
+        time.sleep(1)
 
 except KeyboardInterrupt:
-    print("Stopping")
+    print("Exiting program")
+
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+finally:
+    print("Program terminated.")
