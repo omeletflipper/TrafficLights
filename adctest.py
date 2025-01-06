@@ -8,26 +8,27 @@ from adafruit_ads1x15.analog_in import AnalogIn
 i2c = busio.I2C(board.SCL, board.SDA)
 ads = ADS1115(i2c)
 
-# Set the gain (voltage range, default is 2/3 for ±6.144V range)
-ads.gain = 1  # ±4.096V range
+# Set the gain (voltage range, default is ±4.096V)
+ads.gain = 1
 
 try:
     while True:
-        mic1 = AnalogIn(ads, ADS1115.P0)
-        mic2 = AnalogIn(ads, ADS1115.P1)
-        mic3 = AnalogIn(ads, ADS1115.P2)
-        mic4 = AnalogIn(ads, ADS1115.P3)
+        # Read each channel
+        chan0 = AnalogIn(ads, ADS1115.P0)
+        chan1 = AnalogIn(ads, ADS1115.P1)
+        chan2 = AnalogIn(ads, ADS1115.P2)
+        chan3 = AnalogIn(ads, ADS1115.P3)
 
-        # Read and print the voltage for each channel
-        print(f"Channel 0: {mic1.voltage:.2f} V")
-        print(f"Channel 1: {mic2.voltage:.2f} V")
-        print(f"Channel 2: {mic3.voltage:.2f} V")
-        print(f"Channel 3: {mic4.voltage:.2f} V")
+        # Print the voltage from each channel
+        print(f"Channel 0: {chan0.voltage:.2f} V")
+        print(f"Channel 1: {chan1.voltage:.2f} V")
+        print(f"Channel 2: {chan2.voltage:.2f} V")
+        print(f"Channel 3: {chan3.voltage:.2f} V")
         print("-" * 30)
         time.sleep(1)
 
 except KeyboardInterrupt:
-    print("Exiting program")
+    print("Exiting program.")
 
 except Exception as e:
     print(f"An error occurred: {e}")
