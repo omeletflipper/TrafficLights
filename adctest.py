@@ -25,7 +25,7 @@ try:
         print(f"Channel 2: {chan2.voltage:.2f} V")
         print(f"Channel 3: {chan3.voltage:.2f} V")
         print("-" * 30)
-        time.sleep(0.01)
+        time.sleep(0.1)
 
 except KeyboardInterrupt:
     print("Exiting program.")
