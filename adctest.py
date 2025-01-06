@@ -14,10 +14,10 @@ ads.gain = 1
 try:
     while True:
         # Read each channel
-        chan0 = AnalogIn(ads, ADS1115.P0)
-        chan1 = AnalogIn(ads, ADS1115.P1)
-        chan2 = AnalogIn(ads, ADS1115.P2)
-        chan3 = AnalogIn(ads, ADS1115.P3)
+        chan0 = AnalogIn(ads, 0)  # Channel 0
+        chan1 = AnalogIn(ads, 1)  # Channel 1
+        chan2 = AnalogIn(ads, 2)  # Channel 2
+        chan3 = AnalogIn(ads, 3)  # Channel 3
 
         # Print the voltage from each channel
         print(f"Channel 0: {chan0.voltage:.2f} V")
