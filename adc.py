@@ -19,7 +19,7 @@ chan3 = AnalogIn(ads, ADS.P3)
 
 delayTime = 1
 # Initialize the DigitalInputDevice for the sensor at GPIO 24
-digital_pin = DigitalInputDevice(24, pull_up=False)  # pull_up=False, because pull_up_down=GPIO.PUD_OFF
+digital_pin = DigitalInputDevice(4, pull_up=False)  # pull_up=False, because pull_up_down=GPIO.PUD_OFF
 
 while True:
     analog = '%.2f' % chan0.voltage
