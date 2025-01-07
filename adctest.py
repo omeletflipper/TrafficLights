@@ -9,7 +9,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 ads = ADS1115(i2c)
 
 # Set the gain (voltage range, default is ±4.096V)
-ads.gain = 4
+ads.gain = 2
 
 try:
     while True:
@@ -20,7 +20,7 @@ try:
         chan3 = AnalogIn(ads, 3)  # Channel 3
 
         # Print the voltage from each channel
-        print(f"Channel 2: {chan2.voltage:.2f} V")
+        print(f"Channel 2: {chan2.voltage:.3f} V")
         print("-" * 30)
         time.sleep(0.1)
 
