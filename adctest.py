@@ -20,7 +20,7 @@ try:
         chan3 = AnalogIn(ads, 3)  # Channel 3
 
         # Print the voltage from each channel
-        print(f"Channel 2: {chan2.voltage:.3f} V")
+        print(f"Channel 2: {chan2.voltage:.5f} V")
         print("-" * 30)
         time.sleep(0.1)
 
