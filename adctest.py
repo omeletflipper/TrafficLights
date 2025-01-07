@@ -9,7 +9,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 ads = ADS1115(i2c)
 
 # Set the gain (voltage range, default is ±4.096V)
-ads.gain = 2
+ads.gain = 2/3
 
 try:
     while True:
