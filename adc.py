@@ -22,7 +22,7 @@ delayTime = 1
 digital_pin = DigitalInputDevice(4, pull_up=False)  # pull_up=False, because pull_up_down=GPIO.PUD_OFF
 
 while True:
-    analog = '%.2f' % chan0.voltage
+    analog = '%.2f' % chan2.voltage
 
     # Output to the console
     if not digital_pin.is_active:
