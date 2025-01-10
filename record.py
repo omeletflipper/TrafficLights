@@ -17,8 +17,8 @@ chan = AnalogIn(ads, ADS.P0)
 
 # Recording settings
 sample_rate = 8000  # Samples per second
-record_time = 5  # Duration of recording in seconds
-output_file = "recording.wav"
+record_time = 6  # Duration of recording in seconds
+output_file = "recording2.wav"
 
 # WAV file setup
 wav_file = wave.open(output_file, "w")
