@@ -57,6 +57,8 @@ try:
         distance2 = measure_distance(trig2, echo2)
         print('Sensor 2 Distance: {}'.format(distance2))
 
+        print('-'*30)
+
         time.sleep(1)
 
 except (KeyboardInterrupt, SystemExit):
