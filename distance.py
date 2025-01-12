@@ -50,9 +50,9 @@ def measure_distance(trig, echo):
         distance = pulse_duration * 17000
 
         # Timeout and range validation
-        if pulse_duration >= 0.01746:
+        if pulse_duration >= 0.000588:
             return 'timeout'
-        elif distance > 300 or distance == 0:
+        elif distance > 10 or distance == 0:
             return 'out of range'
 
         return round(distance, 3)
