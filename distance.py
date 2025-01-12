@@ -4,15 +4,6 @@ import time
 import sys
 import signal
 
-# Handle Ctrl+C to exit cleanly
-def signal_handler(signal, frame):
-    print('You pressed Ctrl+C!')
-    gpio.cleanup()
-    sys.exit(0)
-
-signal.signal(signal.SIGINT, signal_handler)
-
-# GPIO Mode
 gpio.setmode(gpio.BCM)
 
 # Define pins for Sensor 1
