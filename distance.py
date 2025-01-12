@@ -4,9 +4,7 @@ import time
 import sys
 import signal
 
-signal.signal(signal.SIGINT, signal_handler)
 gpio.setmode(gpio.BCM)
-
 #Sensor 1
 trig1 = 23
 echo1 = 18
