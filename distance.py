@@ -69,6 +69,9 @@ try:
         elif distance2 == 'timeout' and isinstance(distance1, (int, float)):
             print("Sensor 2 timeout, but Sensor 1 is valid: ", distance1)
 
+        print('-'*30)
+        time.sleep(1)
+
 except (KeyboardInterrupt, SystemExit):
     gpio.cleanup()
     sys.exit(0)
