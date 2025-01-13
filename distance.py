@@ -65,9 +65,9 @@ try:
 
         # Check if one is timeout but the other is valid
         if (distance1 in ['timeout', 'out of range'] and isinstance(distance2, (int, float))):
-            print(f"Sensor 1 {distance1}, but Sensor 2 is valid: {distance2}")
+            print(f"Sensor 1 {distance1}, Light at traffic light #2 turn green}")
         elif (distance2 in ['timeout', 'out of range'] and isinstance(distance1, (int, float))):
-            print(f"Sensor 2 {distance2}, but Sensor 1 is valid: {distance1}")
+            print(f"Sensor 2 {distance2}, Light at traffic light #1 turn green.")
 
         print('-'*30)
         time.sleep(1)
