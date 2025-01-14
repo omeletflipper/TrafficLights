@@ -11,8 +11,8 @@ trig1 = 23
 echo1 = 18
 
 # Define pins for Sensor 2
-trig2 = 20
-echo2 = 21
+trig2 = 19
+echo2 = 26
 
 # Set up GPIO
 gpio.setup(trig1, gpio.OUT)
